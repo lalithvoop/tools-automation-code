@@ -1,0 +1,21 @@
+format_version: 10
+pipelines:
+  tf-tool-vm-create: 
+    group: terraform-group
+    materials:
+      mygit: 
+        git: https://github.com/lalithvoop/tools-automation-code.git
+        auto-update: true
+        branch: main
+    stages:
+      - Create-vm:
+          fetch_materials: true
+          environment_variables:
+            env: dev
+          approval:
+            type: manual
+          jobs:
+            terraform-apply:
+              tasks:
+                - exec: {command: terraform, arguments: ["init","-backend-config=env-dev/state.tfvars"], run_if: passed}
+                - exec: {command: terraform, arguments: ["apply","-var-file=env-dev/main.tfvars","-auto-approve"], run_if: passed}
