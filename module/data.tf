@@ -4,7 +4,7 @@ data "aws_ami" "image" {
     owners = ["973714476881"]
 }
 
-data "security_group" "sg" {
+data "aws_security_group" "sg" {
     name = "allow-all"
 }
 
