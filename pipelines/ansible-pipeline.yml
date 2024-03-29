@@ -1,0 +1,20 @@
+format_version: 10
+pipelines:
+  tf-tool-vm-create: 
+    group: terraform-group
+    materials:
+      mygit: 
+        git: https://github.com/lalithvoop/tools-automation-code.git
+        auto-update: true
+        branch: main
+    stages:
+      - Create-vm:
+          fetch_materials: true
+          environment_variables:
+            env: dev
+          approval:
+            type: manual
+          jobs:
+            terraform-apply:
+              tasks:
+                - exec: {command: ansible-playbook, arguments: ["-i","prometheus.vsldo.online,","-e","ansible_user=ec2-user","-e","ansible_password=DevOp321","main.yml"], run_if: passed}
