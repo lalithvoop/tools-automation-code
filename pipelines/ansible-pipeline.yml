@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  tf-tool-vm-create: 
+  ansible-tf-tools: 
     group: terraform-group
     materials:
       mygit: 
