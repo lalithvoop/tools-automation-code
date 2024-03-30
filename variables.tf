@@ -1,11 +1,12 @@
-variable instance_type {
-    default = "t3.small"
+variable "tools" {
+  default = {
+    prometheus = {
+      instance_type = "t3.small"
+      policy_resource_list = ["ec2:DescribeInstances"]
+    }
+  }
 }
 
-variable tool_name {
-    default = "prometheus"
-}
-
-variable zone_id{
-    default = "Z05808672PDIFFA0T7K1O"
+variable "zone_id" {
+  default = "Z02385991VFZVIKN8WPK8"
 }
