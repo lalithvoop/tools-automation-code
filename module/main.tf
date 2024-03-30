@@ -5,9 +5,16 @@ resource "aws_instance" "instance"{
     iam_instance_profile = aws_iam_instance_profile.test_profile.name
 
 
-    tags = {
-        Name = var.tool_name
+    instance_market_options {
+    market_type = "spot"
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type             = "persistent"
     }
+  }
+  tags = {
+    Name = var.tool_name
+  }
 }
 
 resource "aws_route53_record" "record" {
