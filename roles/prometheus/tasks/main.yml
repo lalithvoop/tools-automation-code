@@ -1,5 +1,5 @@
 - name: set prompt for ec2
-  anisble.builtin.shell: set-prompt prometheus 
+  ansible.builtin.shell: set-prompt prometheus 
 
 - name: download and unarchive
   ansible.builtin.unarchive:
