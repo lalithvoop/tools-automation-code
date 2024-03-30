@@ -11,7 +11,7 @@
 - name: adding prometheus.yml file in /opt/
   ansible.builtin.template:
     src: prometheus.yml
-    desc: /opt/prometheus-2.51.0.linux-amd64/prometheus.yml
+    dest: /opt/prometheus-2.51.0.linux-amd64/prometheus.yml
 
 - name: Copy Prometheus Service File
   ansible.builtin.template:
