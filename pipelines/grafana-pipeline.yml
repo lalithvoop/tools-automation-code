@@ -17,4 +17,4 @@ pipelines:
           jobs:
             terraform-apply:
               tasks:
-                - exec: {command: ansible-playbook, arguments: ["-i","grafana-private.vsldo.online,","-e","ansible_user=ec2-user","-e","ansible_password=DevOps321","-e","tool_name=grafana","tools.yml"], run_if: passed}
+                - exec: {command: ansible-playbook, arguments: ["-i","grafana.vsldo.online,","-e","ansible_user=ec2-user","-e","ansible_password=DevOps321","-e","tool_name=grafana","tools.yml"], run_if: passed}
