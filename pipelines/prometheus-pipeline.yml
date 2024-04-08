@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  ansible-tf-tools: 
+  prometheus-ansible: 
     group: terraform-group
     materials:
       mygit: 
