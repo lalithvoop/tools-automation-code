@@ -7,6 +7,6 @@
     dest: /etc/yum.repos.d/grafana.repo
 
 - name: install grafana
-  anible.builtin.dnf:
+  ansible.builtin.dnf:
     name: grafana
     state: installed
