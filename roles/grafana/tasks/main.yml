@@ -1,5 +1,5 @@
 - name: set prompt
-  ansible.builtin.shell: sudo set-prompt grafana
+  ansible.builtin.shell: set-prompt grafana
 
 - name: copying repo file
   ansible.builtin.template:
