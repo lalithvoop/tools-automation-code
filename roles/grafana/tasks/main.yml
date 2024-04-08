@@ -5,3 +5,8 @@
   ansible.builtin.template:
     src: grafana.repo
     dest: /etc/yum.repos.d/grafana.repo
+
+- name: install grafana
+  anible.builtin.dnf:
+    name: grafana
+    state: installed
