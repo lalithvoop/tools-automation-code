@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   grafana-ansible: 
-    group: terraform-group
+    group: Tools
     materials:
       mygit: 
         git: https://github.com/lalithvoop/tools-automation-code.git

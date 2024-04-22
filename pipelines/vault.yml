@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  tf-tool-vm-create: 
+  vault-ansible: 
     group: Tools
     materials:
       mygit: 
@@ -17,5 +17,4 @@ pipelines:
           jobs:
             terraform-apply:
               tasks:
-                - exec: {command: terraform, arguments: ["init"], run_if: passed}
-                - exec: {command: terraform, arguments: ["apply","-auto-approve"], run_if: passed}
+                - exec: {command: ansible-playbook, arguments: ["-i","vault-internal.vsldo.online,","-e","ansible_user=ec2-user","-e","ansible_password=DevOps321","-e","tool_name=vault","tools.yml"], run_if: passed}
